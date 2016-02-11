@@ -1,9 +1,6 @@
 name: WolfOfWallStreet
 main: TestPlugin.FirstCommand
 version: 1.0
-commands: 
-	basic:
-		description: This command does nothing.
-		usage: /pjsucks
-		permission: FirstCommand.WolfOfWallStreet
-		permission-message: Nope, not today.
+commands:
+    PjSucks:
+        description: What do you think?
