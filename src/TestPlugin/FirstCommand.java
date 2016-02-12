@@ -1,25 +1,45 @@
 package TestPlugin;
 
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
+import java.util.Set;
+
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.player.PlayerEggThrowEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class FirstCommand extends JavaPlugin{
+import TestPlugin.commands.pjsucks;
+
+public class FirstCommand extends JavaPlugin {
 	@Override
-	public void onEnable(){
-		getLogger().info("WolfOfWallStreet has been enabled.");//Sends Message in console when Plugin is loaded.
+	public void onEnable() {
+		getLogger().info("WolfOfWallStreet has been enabled.");
+		getCommand("PjSucks").setExecutor(new pjsucks());
 	}
+
 	@Override
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if (cmd.getName().equalsIgnoreCase("PjSucks")) { // If the player typed /basic then do the following...
-			sender.sendMessage("Yes he does.");
-			return true;
-		} //If this has happened the function will return true. 
-	        // If this hasn't happened the value of false will be returned.
-		return false; 
-	}
-	@Override
-	public void onDisable(){
+	public void onDisable() {
 		getLogger().info("WolfOfWallStreet has been disabled.");
+	}
+
+	public void testThingy(PlayerEggThrowEvent event) {
+		Player player = event.getPlayer();
+		player.getWorld().strikeLightning(player.getTargetBlock((Set<Material>) null, 200).getLocation());
+	}
+
+	@EventHandler
+	public void onPlayerMove(PlayerMoveEvent event) {
+		// Get the player's location.
+		Location loc = event.getPlayer().getLocation();
+		// Sets loc to five above where it used to be. Note that this doesn't
+		// change the player's position.
+		loc.setY(loc.getY() + 5);
+		// Gets the block at the new location.
+		Block b = loc.getBlock();
+		// Sets the block to type id 1 (stone).
+		b.setType(Material.STONE);
 	}
 }
