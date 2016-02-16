@@ -1,5 +1,5 @@
 name: WolfOfWallStreet
-main: TestPlugin.FirstCommand
+main: TestPlugin.Wolf
 version: 1.0
 commands:
     PjSucks:

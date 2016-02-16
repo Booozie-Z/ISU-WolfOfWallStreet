@@ -1,4 +1,4 @@
-package TestPlugin.commands;
+package Wolf.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -13,7 +13,6 @@ public class pjsucks implements CommandExecutor{
 			
 			return true;
 		}
-	        // If this hasn't happened the value of false will be returned.
 		return false; 
 	}
 
