@@ -3,7 +3,7 @@ package TestPlugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import Wolf.commands.pjsucks;
+import TestPlugin.commands.pjsucks;
 
 public class Wolf extends JavaPlugin {
 	@Override

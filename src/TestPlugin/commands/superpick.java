@@ -1,4 +1,4 @@
-package Wolf.commands;
+package TestPlugin.commands;
 
 public class superpick {
 
