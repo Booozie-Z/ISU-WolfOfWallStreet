@@ -4,6 +4,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import TestPlugin.commands.pjsucks;
+import TestPlugin.events.player.PlayerJoin;
 
 public class Wolf extends JavaPlugin {
 	@Override
@@ -25,7 +26,7 @@ public class Wolf extends JavaPlugin {
 	public void loadEvents(){
 		PluginManager pm = getServer().getPluginManager();
 		
-		//pm.registerEvents(new <EventJava>, this);
+		pm.registerEvents(new PlayerJoin(), this);
 	}
 	public void registerConfig(){
 		getConfig().options().copyDefaults(true);
