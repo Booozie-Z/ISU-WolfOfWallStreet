@@ -11,14 +11,14 @@ public class PlayerJoin implements Listener{
 	
 	private Wolf plugin;
 	
-	public playerJoin(Wolf pl){
+	public void playerJoin(Wolf pl){
 		plugin = pl;
 	}
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event){
 		
 		
-		String message = ChatColor.DARK_RED + "Welcome to the Sever!";
+		String message = ChatColor.AQUA + "Welcome to the Sever!";
 		event.setJoinMessage(message);
 	}
 	
