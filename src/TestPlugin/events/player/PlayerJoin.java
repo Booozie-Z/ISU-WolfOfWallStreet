@@ -6,6 +6,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.entity.Player;
 
+import org.bukkit.plugin.java.JavaPlugin;
+
 import TestPlugin.Wolf;
 import TestPlugin.commands.PlayerValue;
 
@@ -18,9 +20,9 @@ public class PlayerJoin implements Listener{
 	}
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event){
+		Player player = (Player) event;
 		
-		
-		String message = ChatColor.AQUA + "Welcome to the Sever!";
+		String message = ChatColor.AQUA + "Welcome to the Sever" + player.getName() + "!";
 		event.setJoinMessage(message);
 		
 		//To add PlayerValue getPlayerListName() = new PlayerValue()

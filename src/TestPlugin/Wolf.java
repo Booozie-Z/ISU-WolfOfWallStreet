@@ -13,11 +13,14 @@ public class Wolf extends JavaPlugin {
 		
 		loadCommands();
 		loadEvents();
+		registerConfig();
+		
 	}
 
 	@Override
 	public void onDisable() {
 		getLogger().info("WolfOfWallStreet has been disabled.");
+		registerConfig();
 	}
 	
 	public void loadCommands(){
