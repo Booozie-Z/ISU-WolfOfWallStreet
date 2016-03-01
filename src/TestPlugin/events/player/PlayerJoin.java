@@ -1,4 +1,4 @@
-package TestPlugin.Events.player;
+package TestPlugin.events.player;
 
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
