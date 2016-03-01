@@ -4,7 +4,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import TestPlugin.commands.pjsucks;
-import TestPlugin.Events.player.PlayerJoin;
+import TestPlugin.events.player.PlayerJoin;
 
 public class Wolf extends JavaPlugin {
 	@Override
