@@ -1,11 +1,13 @@
-package TestPlugin.events.player;
+package TestPlugin.Events.player;
 
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.entity.Player;
 
 import TestPlugin.Wolf;
+import TestPlugin.commands.PlayerValue;
 
 public class PlayerJoin implements Listener{
 	
@@ -20,7 +22,11 @@ public class PlayerJoin implements Listener{
 		
 		String message = ChatColor.AQUA + "Welcome to the Sever!";
 		event.setJoinMessage(message);
+		
+		//To add PlayerValue getPlayerListName() = new PlayerValue()
+		//then create the actual player value class and all the methods
 	}
+	
 	
 	
 
