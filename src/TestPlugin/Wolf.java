@@ -3,6 +3,7 @@ package TestPlugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import TestPlugin.commands.ValueCommands;
 import TestPlugin.commands.pjsucks;
 import TestPlugin.events.player.PlayerJoin;
 
@@ -25,6 +26,7 @@ public class Wolf extends JavaPlugin {
 	
 	public void loadCommands(){
 		getCommand("PjSucks").setExecutor(new pjsucks());
+		getCommand("Balance").setExecutor(new ValueCommands());
 	}
 	public void loadEvents(){
 		PluginManager pm = getServer().getPluginManager();
