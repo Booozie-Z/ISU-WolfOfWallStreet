@@ -5,7 +5,8 @@ public class PlayerValue {
 	private double balance;
 	
 	public void newPlayerValue(){
-		balance = 0;
+		//name = player.getName();
+		//wolf.getConfig().set("PlayersBalance.name", balance);
 	}
 	public double getBalance(){
 		return balance;
