@@ -1,5 +1,6 @@
 package TestPlugin.commands;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -14,7 +15,7 @@ public class ValueCommands implements CommandExecutor{
 		Player player = (Player) sender;
 	
 		if (cmd.getName().equalsIgnoreCase("Balance")) { // If the player typed /basic then do the following...
-			sender.sendMessage("Your name is" + player.getName());
+			sender.sendMessage(ChatColor.RED + "Your name is " + player.getName());
 			
 			return true;
 		}

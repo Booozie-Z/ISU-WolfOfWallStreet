@@ -15,10 +15,10 @@ public class pjsucks implements CommandExecutor{
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("PjSucks")) { // If the player typed /basic then do the following...
-			sender.sendMessage("Yes he does.");
+			//sender.sendMessage("Yes he does.");
 			
 			Player player = (Player) sender;
-			
+			//org.Bukkit.boss.bossBar.addPlayer(player);
 			Inventory inv = Bukkit.createInventory(null, 9, "Super Items");
 			
 			ItemStack diamondSword = new ItemStack(Material.DIAMOND_SWORD);
