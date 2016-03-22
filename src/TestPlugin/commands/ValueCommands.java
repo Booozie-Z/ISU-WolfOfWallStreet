@@ -15,7 +15,7 @@ public class ValueCommands implements CommandExecutor{
 		Player player = (Player) sender;
 	
 		if (cmd.getName().equalsIgnoreCase("Balance")) { // If the player typed /basic then do the following...
-			sender.sendMessage(ChatColor.RED + "Your name is " + player.getName());
+			sender.sendMessage(ChatColor.RED + player.getName() + ": 0 (Balance unfinished.)");
 			
 			return true;
 		}
