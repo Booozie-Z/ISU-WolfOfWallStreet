@@ -1,25 +1,12 @@
 package TestPlugin.events.player;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.World;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
-import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.world.WorldEvent;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Item;
-import org.bukkit.entity.Player;
-
-import org.bukkit.plugin.java.JavaPlugin;
 
 import TestPlugin.Wolf;
-import TestPlugin.commands.PlayerValue;
 
 public class PlayerJoin implements Listener{
 	@SuppressWarnings("unused")
@@ -34,7 +21,6 @@ public class PlayerJoin implements Listener{
 		
 		String message = ChatColor.AQUA + "Welcome to the Sever "  + play.getDisplayName() + "!";
 		event.setJoinMessage(message);
-		
 		
 		
 		//To add PlayerValue getPlayerListName() = new PlayerValue()

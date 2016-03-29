@@ -11,7 +11,10 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 public class pjsucks implements CommandExecutor{
-
+	/**
+	 * Pjsucks was the first command made to get actual feedback from minecraft.
+	 * Right now we used it to make a test inventory that we plan on making a command menu by making the items clickable.
+	 */
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("PjSucks")) { // If the player typed /basic then do the following...
