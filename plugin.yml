@@ -6,3 +6,6 @@ commands:
         description: What do you think?
     Balance:
         description: Your current balance.
+    sell:
+        description: Sell an item to the server.
+        usage: /sell item amount price

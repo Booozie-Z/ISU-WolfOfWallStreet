@@ -9,7 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import TestPlugin.commands.ValueCommands;
 import TestPlugin.commands.pjsucks;
-import TestPlugin.commands.sell;
+import TestPlugin.commands.sellTest;
 import TestPlugin.events.player.PlayerJoin;
 
 public class Wolf extends JavaPlugin {
@@ -39,7 +39,7 @@ public class Wolf extends JavaPlugin {
 	public void loadCommands(){
 		getCommand("PjSucks").setExecutor(new pjsucks());
 		getCommand("Balance").setExecutor(new ValueCommands());
-		getCommand("sell").setExecutor(new sell());
+		getCommand("sell").setExecutor(new sellTest());
 	}
 	/**
 	 * Registers events to listen for in game.
