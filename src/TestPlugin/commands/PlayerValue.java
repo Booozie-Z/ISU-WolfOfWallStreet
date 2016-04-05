@@ -2,7 +2,7 @@ package TestPlugin.commands;
 /**
  * 
  * @author Diego
- *	This is the very beginnings of the math to get the player balance.
+ *	This is the very beginnings of the maths to get the player balance.
  */
 public class PlayerValue {
 	

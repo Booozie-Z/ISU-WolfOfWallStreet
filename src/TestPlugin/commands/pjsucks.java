@@ -21,7 +21,6 @@ public class pjsucks implements CommandExecutor{
 			//sender.sendMessage("Yes he does.");
 			
 			Player player = (Player) sender;
-			//org.Bukkit.boss.bossBar.addPlayer(player);
 			Inventory inv = Bukkit.createInventory(null, 9, "Super Items");
 			
 			ItemStack diamondSword = new ItemStack(Material.DIAMOND_SWORD);

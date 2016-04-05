@@ -7,9 +7,10 @@ import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import TestPlugin.commands.Buy;
+import TestPlugin.commands.Sell;
 import TestPlugin.commands.ValueCommands;
 import TestPlugin.commands.pjsucks;
-import TestPlugin.commands.sellTest;
 import TestPlugin.events.player.PlayerJoin;
 
 public class Wolf extends JavaPlugin {
@@ -44,11 +45,16 @@ public class Wolf extends JavaPlugin {
 		getCommand("PjSucks").setExecutor(new pjsucks());
 		getCommand("Balance").setExecutor(new ValueCommands());
 <<<<<<< HEAD
+<<<<<<< HEAD
 		getCommand("Give").setExecutor(new ValueCommands());
 		getCommand("SetBalance").setExecutor(new ValueCommands());
 =======
 		getCommand("sell").setExecutor(new sellTest());
 >>>>>>> 79eb94232dd4442de31331028121cc8dd0d3c840
+=======
+		getCommand("sell").setExecutor(new Sell());
+		getCommand("buy").setExecutor(new Buy());
+>>>>>>> 1d58463f88c3c075e957ecb41719447e6ec05110
 	}
 	/**
 	 * Registers events to listen for in game.
