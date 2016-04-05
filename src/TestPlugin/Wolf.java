@@ -22,11 +22,8 @@ public class Wolf extends JavaPlugin {
 		loadCommands();
 		loadEvents();
 		registerConfig();
-<<<<<<< HEAD
 		setup();
-=======
 		getLogger().info("WolfOfWallStreet has been enabled.");
->>>>>>> 79eb94232dd4442de31331028121cc8dd0d3c840
 	}
 	/**
 	 * Saves config and gives disabled message.
@@ -44,17 +41,10 @@ public class Wolf extends JavaPlugin {
 	public void loadCommands(){
 		getCommand("PjSucks").setExecutor(new pjsucks());
 		getCommand("Balance").setExecutor(new ValueCommands());
-<<<<<<< HEAD
-<<<<<<< HEAD
 		getCommand("Give").setExecutor(new ValueCommands());
 		getCommand("SetBalance").setExecutor(new ValueCommands());
-=======
-		getCommand("sell").setExecutor(new sellTest());
->>>>>>> 79eb94232dd4442de31331028121cc8dd0d3c840
-=======
 		getCommand("sell").setExecutor(new Sell());
 		getCommand("buy").setExecutor(new Buy());
->>>>>>> 1d58463f88c3c075e957ecb41719447e6ec05110
 	}
 	/**
 	 * Registers events to listen for in game.

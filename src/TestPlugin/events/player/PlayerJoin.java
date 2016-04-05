@@ -1,6 +1,4 @@
 package TestPlugin.events.player;
-
-<<<<<<< HEAD
 import org.bukkit.Bukkit;
 
 import org.bukkit.ChatColor;
