@@ -6,3 +6,7 @@ commands:
         description: What do you think?
     Balance:
         description: Your current balance.
+    Give:
+        description: Give player money.
+    SetBalance:
+        description: Set player balance.

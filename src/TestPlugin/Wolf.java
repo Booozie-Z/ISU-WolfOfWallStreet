@@ -19,7 +19,7 @@ public class Wolf extends JavaPlugin {
 		loadCommands();
 		loadEvents();
 		registerConfig();
-		
+		setup();
 	}
 
 	@Override
@@ -31,6 +31,8 @@ public class Wolf extends JavaPlugin {
 	public void loadCommands(){
 		getCommand("PjSucks").setExecutor(new pjsucks());
 		getCommand("Balance").setExecutor(new ValueCommands());
+		getCommand("Give").setExecutor(new ValueCommands());
+		getCommand("SetBalance").setExecutor(new ValueCommands());
 	}
 	public void loadEvents(){
 		PluginManager pm = getServer().getPluginManager();
@@ -47,11 +49,17 @@ public class Wolf extends JavaPlugin {
 	    if (!playersfile.exists()) {
 	        try {
 	            playersfile.createNewFile();
+	            
+	            
 	        }
 	        catch (IOException e) {
 	            getLogger().severe(ChatColor.RED + "Could not create the playerBalance.yml!");
 	        }
 	    }
+	    
+	    
+	    
+	    
 	  }
 	
 }
