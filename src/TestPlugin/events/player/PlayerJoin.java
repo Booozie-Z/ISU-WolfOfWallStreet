@@ -19,7 +19,7 @@ public class PlayerJoin implements Listener{
 	public void onPlayerJoin(PlayerJoinEvent event){
 		Player play = event.getPlayer();
 		
-		String message = ChatColor.AQUA + "Welcome to the Sever "  + play.getDisplayName() + "!";
+		String message = ChatColor.AQUA + "Welcome to the Server "  + play.getDisplayName() + "!";
 		event.setJoinMessage(message);
 		
 		

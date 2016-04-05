@@ -9,3 +9,6 @@ commands:
     sell:
         description: Sell an item to the server.
         usage: /sell item amount price
+    Buy:
+        descripton: Buy an item from the server.
+        usage: /buy item amount
