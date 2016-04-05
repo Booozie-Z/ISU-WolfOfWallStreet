@@ -6,7 +6,13 @@ commands:
         description: What do you think?
     Balance:
         description: Your current balance.
+<<<<<<< HEAD
     Give:
         description: Give player money.
     SetBalance:
         description: Set player balance.
+=======
+    sell:
+        description: Sell an item to the server.
+        usage: /sell item amount price
+>>>>>>> 79eb94232dd4442de31331028121cc8dd0d3c840

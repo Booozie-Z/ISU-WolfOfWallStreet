@@ -1,5 +1,6 @@
 package TestPlugin.events.player;
 
+<<<<<<< HEAD
 import org.bukkit.Bukkit;
 
 import org.bukkit.ChatColor;
@@ -7,22 +8,13 @@ import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
-import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.world.WorldEvent;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Item;
-import org.bukkit.entity.Player;
-
-import org.bukkit.plugin.java.JavaPlugin;
 
 import TestPlugin.Wolf;
-import TestPlugin.commands.PlayerValue;
 
 import java.io.File;
 import java.io.IOException;

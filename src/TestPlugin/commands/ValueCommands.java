@@ -23,6 +23,7 @@ public class ValueCommands implements CommandExecutor{
 		Player player = (Player) sender;
 	
 		if (cmd.getName().equalsIgnoreCase("Balance")) { // If the player typed /basic then do the following...
+<<<<<<< HEAD
 			String playerName = player.getName();
 			File f = new File("C:/Users/Digo Barreiro/Documents/plugin/BuildTools/plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
 			FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
@@ -61,6 +62,9 @@ public class ValueCommands implements CommandExecutor{
 			int set = Integer.parseInt(args[0]);
 			int value = set;
 			playerData.set("currency.balance", value);
+=======
+			sender.sendMessage(ChatColor.RED + player.getName() + ChatColor.GREEN + ": 0 (Balance unfinished.)");
+>>>>>>> 79eb94232dd4442de31331028121cc8dd0d3c840
 			
 			try {
 				playerData.save(f);
