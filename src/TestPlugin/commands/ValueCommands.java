@@ -22,10 +22,9 @@ public class ValueCommands implements CommandExecutor{
 		
 		Player player = (Player) sender;
 	
-		if (cmd.getName().equalsIgnoreCase("Balance")) { // If the player typed /basic then do the following...
-<<<<<<< HEAD
+		if (cmd.getName().equalsIgnoreCase("Balance")) { // If the player typed /balance then do the following...
 			String playerName = player.getName();
-			File f = new File("C:/Users/Digo Barreiro/Documents/plugin/BuildTools/plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
+			File f = new File("/plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
 			FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
 			
 			
@@ -34,10 +33,10 @@ public class ValueCommands implements CommandExecutor{
 			
 			return true;
 		}
-		
-		if (cmd.getName().equalsIgnoreCase("Give")){
+		//Give is already a command so I changed it to addBal
+		if (cmd.getName().equalsIgnoreCase("addBal")){
 			String playerName = player.getName();
-			File f = new File("C:/Users/Digo Barreiro/Documents/plugin/BuildTools/plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
+			File f = new File("/plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
 			FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
 			
 			int value = playerData.getInt("currency.balance");
@@ -48,7 +47,6 @@ public class ValueCommands implements CommandExecutor{
 			try {
 				playerData.save(f);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			return true;
@@ -56,20 +54,17 @@ public class ValueCommands implements CommandExecutor{
 		
 		if (cmd.getName().equalsIgnoreCase("SetBalance")){
 			String playerName = player.getName();
-			File f = new File("C:/Users/Digo Barreiro/Documents/plugin/BuildTools/plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
+			File f = new File("/plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
 			FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
 			
 			int set = Integer.parseInt(args[0]);
 			int value = set;
 			playerData.set("currency.balance", value);
-=======
 			sender.sendMessage(ChatColor.RED + player.getName() + ChatColor.GREEN + ": 0 (Balance unfinished.)");
->>>>>>> 79eb94232dd4442de31331028121cc8dd0d3c840
 			
 			try {
 				playerData.save(f);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			return true;
