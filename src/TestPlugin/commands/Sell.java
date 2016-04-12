@@ -31,10 +31,11 @@ public class Sell implements CommandExecutor {
 
 	private void takeItem(CommandSender sender, String[] args) {
 		int itemAmount = Integer.parseInt(args[1]);
+		int stacks = itemAmount/64;
 		Player player = (Player) sender;
 		ItemStack selling = new ItemStack(Material.matchMaterial(args[0]));
 		selling.setAmount(itemAmount);
-		if (!player.getInventory().contains(selling)) {
+		if (!player.getInventory().contains(selling, stacks)) {
 			sender.sendMessage("");
 			sender.sendMessage(ChatColor.RED + "You dont have " + itemAmount + " " + args[0] + ".");
 		}else{
