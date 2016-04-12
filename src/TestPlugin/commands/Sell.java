@@ -1,5 +1,7 @@
 package TestPlugin.commands;
 
+import java.io.File;
+
 //import java.util.Scanner;
 
 //import org.bukkit.Bukkit;
@@ -8,6 +10,8 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 //import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -29,7 +33,11 @@ public class Sell implements CommandExecutor {
 		return false;
 	}
 
+	@SuppressWarnings("deprecation")
 	private void takeItem(CommandSender sender, String[] args) {
+		File f = new File("C:/Users/Digo Barreiro/Documents/plugin/BuildTools/plugins/WolfOfWallStreet/" + File.separator + sender.getName() + ".yml");
+        FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
+		
 		int itemAmount = Integer.parseInt(args[1]);
 		int stacks = itemAmount/64;
 		Player player = (Player) sender;
@@ -42,6 +50,10 @@ public class Sell implements CommandExecutor {
 			player.getInventory().removeItem(selling);
 			player.updateInventory();
 			//Add itemstack info to the players config.
+			
+			
+			
+            playerData.set("selling." + selling.getTypeId(), itemAmount);
 		}
 	}
 }

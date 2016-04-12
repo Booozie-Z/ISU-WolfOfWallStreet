@@ -14,9 +14,6 @@ commands:
         description: Sell an item to the server.
         usage: /sell item amount price
     Buy:
-<<<<<<< HEAD
         description: Buy an item from
-=======
         descripton: Buy an item from the server.
         usage: /buy item amount
->>>>>>> f1c5bd05aa378e9edd0d0686dcebfa38913c836a

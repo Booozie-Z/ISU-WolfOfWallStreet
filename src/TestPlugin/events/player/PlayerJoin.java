@@ -1,13 +1,5 @@
 package TestPlugin.events.player;
-<<<<<<< HEAD
 //import org.bukkit.Bukkit;
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> bfcf7f698a15a0753333c31bcea7ecb6fa0001b9
-import org.bukkit.Bukkit;
->>>>>>> 6bc56fed291c108c6a7da61850f0ddf1bd5d8f30
 
 import org.bukkit.ChatColor;
 //import org.bukkit.Material;
@@ -55,6 +47,8 @@ public class PlayerJoin implements Listener{
             	
                 playerData.createSection("currency");
                 playerData.set("currency.balance", 100);
+                
+                playerData.createSection("selling");
                
                 playerData.save(f);
             } catch (IOException exception) {
