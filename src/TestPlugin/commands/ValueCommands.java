@@ -29,7 +29,7 @@ public class ValueCommands implements CommandExecutor{
 			
 			
 			int value = playerData.getInt("currency.balance");
-			sender.sendMessage(ChatColor.RED + "Your name is " + player.getName() + " and you have $" + value);
+			sender.sendMessage(ChatColor.AQUA + player.getName() + ChatColor.GREEN + ": " + value);
 			
 			return true;
 		}
@@ -59,14 +59,14 @@ public class ValueCommands implements CommandExecutor{
 			
 			int set = Integer.parseInt(args[0]);
 			int value = set;
+			int balance = playerData.getInt("currency.balance");
 			playerData.set("currency.balance", value);
-			sender.sendMessage(ChatColor.RED + player.getName() + ChatColor.GREEN + ": 0 (Balance unfinished.)");
-			
 			try {
 				playerData.save(f);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			sender.sendMessage(ChatColor.AQUA + player.getName() + ChatColor.GREEN + ": " + balance);
 			return true;
 		}
 		

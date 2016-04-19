@@ -1,8 +1,4 @@
 package TestPlugin.events.player;
-<<<<<<< HEAD
-
-=======
->>>>>>> bfcf7f698a15a0753333c31bcea7ecb6fa0001b9
 import org.bukkit.Bukkit;
 
 import org.bukkit.ChatColor;
@@ -41,7 +37,7 @@ public class PlayerJoin implements Listener{
 		
 		String playerName = play.getName();
         //File userdata = new File(Bukkit.getServer().getPluginManager().getPlugin("Hub").getDataFolder(), File.separator + "PlayerDatabase");
-        File f = new File("C:/Users/Digo Barreiro/Documents/plugin/BuildTools/plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
+        File f = new File("/plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
         FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
 
         //When the player file is created for the first time...
