@@ -14,8 +14,7 @@ commands:
         description: Sell an item to the server.
         usage: /sell item amount price
     Buy:
-        description: Buy an item from
-        descripton: Buy an item from the server.
+        description: Buy an item from the server.
         usage: /buy item amount
     Pay:
         description: Pay a player money
