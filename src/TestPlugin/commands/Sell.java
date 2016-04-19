@@ -1,11 +1,17 @@
 package TestPlugin.commands;
 
+import java.io.File;
+
+//import java.util.Scanner;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+//import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 public class Sell implements CommandExecutor {
@@ -22,7 +28,11 @@ public class Sell implements CommandExecutor {
 		return false;
 	}
 
+	@SuppressWarnings("deprecation")
 	private void takeItem(CommandSender sender, String[] args) {
+		File f = new File("/plugins/WolfOfWallStreet/" + File.separator + sender.getName() + ".yml");
+		FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
+
 		int itemAmount = Integer.parseInt(args[1]);
 		Player player = (Player) sender;
 		Material matSelling = Material.matchMaterial(args[0]);
@@ -46,11 +56,17 @@ public class Sell implements CommandExecutor {
 				// while (player.getInventory().contains(matSelling,
 				// itemAmount)) {
 				// player.getInventory().removeItem(sellOne);
-				// }				
+				// }
 				// Add itemstack info to the players config.
+			} else {
+				sender.sendMessage(ChatColor.RED + "You dont have " + itemAmount + " " + args[0] + ".");
 			}
 		} else {
-			sender.sendMessage(ChatColor.RED + "You dont have " + itemAmount + " " + args[0] + ".");
+			player.getInventory().removeItem(selling);
+			player.updateInventory();
+			// Add itemstack info to the players config.
+
+			playerData.set("selling." + selling.getTypeId(), itemAmount);
 		}
 	}
 

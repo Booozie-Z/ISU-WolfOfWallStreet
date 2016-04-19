@@ -2,11 +2,11 @@ package TestPlugin.events.player;
 import org.bukkit.Bukkit;
 
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.World;
+//import org.bukkit.Material;
+//import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.ChatColor;
+//import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -47,6 +47,8 @@ public class PlayerJoin implements Listener{
             	
                 playerData.createSection("currency");
                 playerData.set("currency.balance", 100);
+                
+                playerData.createSection("selling");
                
                 playerData.save(f);
             } catch (IOException exception) {
