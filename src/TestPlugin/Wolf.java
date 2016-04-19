@@ -43,6 +43,7 @@ public class Wolf extends JavaPlugin {
 		getCommand("Balance").setExecutor(new ValueCommands());
 		getCommand("Give").setExecutor(new ValueCommands());
 		getCommand("SetBalance").setExecutor(new ValueCommands());
+		getCommand("Pay").setExecutor(new ValueCommands());
 		getCommand("sell").setExecutor(new Sell());
 		getCommand("buy").setExecutor(new Buy());
 	}

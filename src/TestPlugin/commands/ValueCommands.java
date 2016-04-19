@@ -32,7 +32,7 @@ public class ValueCommands implements CommandExecutor{
  			
  			
   			int value = playerData.getInt("currency.balance");
- 			sender.sendMessage(ChatColor.RED + "Your name is " + player.getName() + " and you have $" + value);
+ 			//sender.sendMessage(ChatColor.RED + "Your name is " + player.getName() + " and you have $" + value);
  			
  			sender.sendMessage(ChatColor.GREEN + "Your balance is $" + value);
  			return true;
@@ -184,6 +184,21 @@ public class ValueCommands implements CommandExecutor{
  			sender.sendMessage(ChatColor.RED + "Correct format /setbalance (amount)");
   		}
   		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		if (cmd.getName().equalsIgnoreCase("Pay") && args.length == 2){
+ 			
+ 			
+ 			
+ 			
+ 			
+ 			
+ 		}else if(cmd.getName().equalsIgnoreCase("Pay")){
+ 			sender.sendMessage(ChatColor.RED + "Correct format /pay (player) (amount)");
+ 		}
  		
  		
   		return false; 
