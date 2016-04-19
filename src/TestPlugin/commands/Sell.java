@@ -51,13 +51,14 @@ public class Sell implements CommandExecutor {
 				while (itemsSold <= itemAmount) {
 					player.getInventory().remove(sellOne);
 					itemsSold++;
+					
 					player.updateInventory();
 				}
+				
 				// while (player.getInventory().contains(matSelling,
 				// itemAmount)) {
 				// player.getInventory().removeItem(sellOne);
 				// }
-				// Add itemstack info to the players config.
 			} else {
 				sender.sendMessage(ChatColor.RED + "You dont have " + itemAmount + " " + args[0] + ".");
 			}
