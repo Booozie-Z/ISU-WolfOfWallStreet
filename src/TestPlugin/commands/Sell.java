@@ -28,7 +28,6 @@ public class Sell implements CommandExecutor {
 		return false;
 	}
 
-	@SuppressWarnings("deprecation")
 	private void takeItem(CommandSender sender, String[] args) {
 		File f = new File("/plugins/WolfOfWallStreet/" + File.separator + sender.getName() + ".yml");
 		FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
@@ -65,8 +64,6 @@ public class Sell implements CommandExecutor {
 			player.getInventory().removeItem(selling);
 			player.updateInventory();
 			// Add itemstack info to the players config.
-
-			playerData.set("selling." + selling.getTypeId(), itemAmount);
 		}
 	}
 

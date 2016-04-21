@@ -37,7 +37,7 @@ public class PlayerJoin implements Listener{
 		
 		String playerName = play.getName();
         //File userdata = new File(Bukkit.getServer().getPluginManager().getPlugin("Hub").getDataFolder(), File.separator + "PlayerDatabase");
-        File f = new File("/plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
+        File f = new File("./plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
         FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
 
         //When the player file is created for the first time...

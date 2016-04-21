@@ -18,71 +18,13 @@ import org.bukkit.entity.Player;
 
 public class ValueCommands implements CommandExecutor{
 
-	@Override
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		
-		Player player = (Player) sender;
-	
-		if (cmd.getName().equalsIgnoreCase("Balance")) { // If the player typed /balance then do the following...
-			String playerName = player.getName();
-			File f = new File("/plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
-			FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
-			
-			
-			int value = playerData.getInt("currency.balance");
-			sender.sendMessage(ChatColor.AQUA + player.getName() + ChatColor.GREEN + ": " + value);
-			
-			return true;
-		}
-		//Give is already a command so I changed it to addBal
-		if (cmd.getName().equalsIgnoreCase("addBal")){
-			String playerName = player.getName();
-			File f = new File("/plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
-			FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
-			
-			int value = playerData.getInt("currency.balance");
-			int add = Integer.parseInt(args[0]);
-			value += add;
-			playerData.set("currency.balance", value);
-			
-			try {
-				playerData.save(f);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return true;
-		}
-		
-		if (cmd.getName().equalsIgnoreCase("SetBalance")){
-			String playerName = player.getName();
-			File f = new File("/plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
-			FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
-			
-			int set = Integer.parseInt(args[0]);
-			int value = set;
-			int balance = playerData.getInt("currency.balance");
-			playerData.set("currency.balance", value);
-			try {
-				playerData.save(f);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			sender.sendMessage(ChatColor.AQUA + player.getName() + ChatColor.GREEN + ": " + balance);
-			return true;
-		}
-		
-		return false; 
-	}
-
   	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
  		
   		Player player = (Player) sender;
- 	
- 		
  
  		if (cmd.getName().equalsIgnoreCase("Balance") && args.length == 0) { // If the player typed /basic then do the following...
   			String playerName = player.getName();
-  			File f = new File("C:/Users/Digo Barreiro/Documents/plugin/BuildTools/plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
+  			File f = new File("./plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
   			FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
  			
  			
@@ -97,7 +39,7 @@ public class ValueCommands implements CommandExecutor{
  				return false;
  			}
 			String playerName = args[0];
- 			File f = new File("C:/Users/Digo Barreiro/Documents/plugin/BuildTools/plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
+ 			File f = new File("./plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
  			FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
  			int value = playerData.getInt("currency.balance");
  			sender.sendMessage(ChatColor.GREEN + playerName + "'s balance is $" + value);
@@ -116,7 +58,7 @@ public class ValueCommands implements CommandExecutor{
  				return false;
 			}
   			String playerName = player.getName();
-  			File f = new File("C:/Users/Digo Barreiro/Documents/plugin/BuildTools/plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
+  			File f = new File("./plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
   			FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
  			
   			int value = playerData.getInt("currency.balance");
@@ -139,7 +81,7 @@ public class ValueCommands implements CommandExecutor{
  			}
  			Player reciever = Bukkit.getPlayerExact(args[0]);
  			String playerName = args[0];
- 			File f = new File("C:/Users/Digo Barreiro/Documents/plugin/BuildTools/plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
+ 			File f = new File("./plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
  			FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
  			int value = playerData.getInt("currency.balance");
  			int add = Integer.parseInt(args[1]);
@@ -154,7 +96,7 @@ public class ValueCommands implements CommandExecutor{
   				e.printStackTrace();
   			}
   			return true;
- 		}else if(cmd.getName().equalsIgnoreCase("Give") && args.length == 2 && new File("C:/Users/Digo Barreiro/Documents/plugin/BuildTools/plugins/WolfOfWallStreet/" + File.separator + args[0] + ".yml").exists() == false){
+ 		}else if(cmd.getName().equalsIgnoreCase("Give") && args.length == 2 && new File("/plugins/WolfOfWallStreet/" + File.separator + args[0] + ".yml").exists() == false){
  			
  			if(player.isOp() == false){
  				sender.sendMessage(ChatColor.RED + "Sorry, you do not have permission to use this command!");
@@ -189,7 +131,7 @@ public class ValueCommands implements CommandExecutor{
  			}
  			
   			String playerName = player.getName();
-  			File f = new File("C:/Users/Digo Barreiro/Documents/plugin/BuildTools/plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
+  			File f = new File("./plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
   			FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
   			
   			int set = Integer.parseInt(args[0]);
@@ -203,7 +145,7 @@ public class ValueCommands implements CommandExecutor{
  				e.printStackTrace();
  			}
  			return true;
- 		}else if(cmd.getName().equalsIgnoreCase("SetBalance") && args.length == 2 && new File("C:/Users/Digo Barreiro/Documents/plugin/BuildTools/plugins/WolfOfWallStreet/" + File.separator + args[0] + ".yml").exists()){
+ 		}else if(cmd.getName().equalsIgnoreCase("SetBalance") && args.length == 2 && new File("/plugins/WolfOfWallStreet/" + File.separator + args[0] + ".yml").exists()){
   			
  			if(player.isOp() == false){
  				sender.sendMessage(ChatColor.RED + "Sorry, you do not have permission to use this command!");
@@ -211,7 +153,7 @@ public class ValueCommands implements CommandExecutor{
  			}
 			Player reciever = Bukkit.getPlayerExact(args[0]);
  			String playerName = args[0];
- 			File f = new File("C:/Users/Digo Barreiro/Documents/plugin/BuildTools/plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
+ 			File f = new File("./plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
  			FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
  			int set = Integer.parseInt(args[1]);
  			int value = set;
@@ -225,7 +167,7 @@ public class ValueCommands implements CommandExecutor{
   				e.printStackTrace();
   			}
   			return true;
- 		}else if(cmd.getName().equalsIgnoreCase("SetBalance") && args.length == 2 && new File("C:/Users/Digo Barreiro/Documents/plugin/BuildTools/plugins/WolfOfWallStreet/" + File.separator + args[0] + ".yml").exists() == false){
+ 		}else if(cmd.getName().equalsIgnoreCase("SetBalance") && args.length == 2 && new File("/plugins/WolfOfWallStreet/" + File.separator + args[0] + ".yml").exists() == false){
  			if(player.isOp() == false){
  				sender.sendMessage(ChatColor.RED + "Sorry, you do not have permission to use this command!");
  				return false;
