@@ -204,7 +204,7 @@ if (cmd.getName().equalsIgnoreCase("Pay") && args.length == 2){
  				int fVal = playerFromData.getInt("currency.balance");
  				int tVal = playerToData.getInt("currency.balance");
  				int add = Integer.parseInt(args[1]);
- 				Player reciever = Bukkit.getPlayerExact(args[0]);
+ 				Player reciever = Bukkit.getPlayerExact(args[0]);                
  				
  				if(fVal >= add){
  					if(reciever.isOnline()){
