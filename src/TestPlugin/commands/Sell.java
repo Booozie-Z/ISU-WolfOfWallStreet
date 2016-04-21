@@ -2,6 +2,7 @@ package TestPlugin.commands;
 
 import java.io.File;
 
+import org.bukkit.Bukkit;
 //import java.util.Scanner;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -41,30 +42,19 @@ public class Sell implements CommandExecutor {
 			if (player.getInventory().contains(matSelling, getAmountOfItems(player, args))) {
 				sender.sendMessage("Amount in inventory: " + getAmountOfItems(player, args));
 				sender.sendMessage("Amount trying to sell: " + itemAmount);
-				// Dolla dolla bills yall is a placeholder for currency name.
-				sender.sendMessage(ChatColor.GREEN + "You are trying to sell " + args[1] + " " + args[0] + " for "
-						+ args[2] + ChatColor.ITALIC + ChatColor.DARK_GREEN + " dolla dolla bills yall.");
+				Bukkit.getServer().broadcastMessage(ChatColor.BLUE + player.getDisplayName() + " is selling " + args[1]
+						+ " " + args[0] + " for $" + args[2]);
 				ItemStack sellOne = new ItemStack(matSelling);
 				sellOne.setAmount(1);
 				int itemsSold = 0;
 				while (itemsSold <= itemAmount) {
 					player.getInventory().remove(sellOne);
 					itemsSold++;
-					
 					player.updateInventory();
 				}
-				
-				// while (player.getInventory().contains(matSelling,
-				// itemAmount)) {
-				// player.getInventory().removeItem(sellOne);
-				// }
 			} else {
 				sender.sendMessage(ChatColor.RED + "You dont have " + itemAmount + " " + args[0] + ".");
 			}
-		} else {
-			player.getInventory().removeItem(selling);
-			player.updateInventory();
-			// Add itemstack info to the players config.
 		}
 	}
 
