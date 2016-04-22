@@ -119,7 +119,6 @@ public class ValueCommands implements CommandExecutor {
 			int set = Integer.parseInt(args[0]);
 			int value = set;
 			playerData.set("currency.balance", value);
-			sender.sendMessage(ChatColor.RED + player.getName() + ChatColor.GREEN + ": 0 (Balance unfinished.)");
 			sender.sendMessage(ChatColor.GREEN + "Your balance was successfully set to $" + set);
 			try {
 				playerData.save(f);
