@@ -16,9 +16,11 @@ import org.bukkit.entity.Player;
 //import org.bukkit.*;
 
 public class ValueCommands implements CommandExecutor {
+
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
 		Player player = (Player) sender;
+
 		// If the player typed /basic then do the following...
 		if (cmd.getName().equalsIgnoreCase("Balance") && args.length == 0) {
 			String playerName = player.getName();
@@ -44,6 +46,7 @@ public class ValueCommands implements CommandExecutor {
 			return true;
 
 		}
+
 		if (cmd.getName().equalsIgnoreCase("Give") && args.length == 1) {
 			if (player.isOp() == false) {
 				sender.sendMessage(ChatColor.RED + "Sorry, you do not have permission to use this command!");
@@ -91,6 +94,7 @@ public class ValueCommands implements CommandExecutor {
 			return true;
 		} else if (cmd.getName().equalsIgnoreCase("Give") && args.length == 2
 				&& new File("./plugins/WolfOfWallStreet/" + File.separator + args[0] + ".yml").exists() == false) {
+
 			if (player.isOp() == false) {
 				sender.sendMessage(ChatColor.RED + "Sorry, you do not have permission to use this command!");
 				return false;
@@ -127,9 +131,9 @@ public class ValueCommands implements CommandExecutor {
 				e.printStackTrace();
 			}
 			return true;
-
 		} else if (cmd.getName().equalsIgnoreCase("SetBalance") && args.length == 2
 				&& new File("./plugins/WolfOfWallStreet/" + File.separator + args[0] + ".yml").exists()) {
+
 			if (player.isOp() == false) {
 				sender.sendMessage(ChatColor.RED + "Sorry, you do not have permission to use this command!");
 				return false;
@@ -164,6 +168,7 @@ public class ValueCommands implements CommandExecutor {
 			}
 			sender.sendMessage(ChatColor.RED + "Correct format /setbalance (amount)");
 		}
+
 		if (cmd.getName().equalsIgnoreCase("Pay") && args.length == 2) {
 
 			File sendTo = new File("./plugins/WolfOfWallStreet/" + File.separator + args[0] + ".yml");
@@ -203,7 +208,6 @@ public class ValueCommands implements CommandExecutor {
 					sender.sendMessage(ChatColor.RED + "You do not have enough money!");
 				}
 			}
-
 		} else if (cmd.getName().equalsIgnoreCase("Pay")) {
 			sender.sendMessage(ChatColor.RED + "Correct format /pay (player) (amount)");
 
