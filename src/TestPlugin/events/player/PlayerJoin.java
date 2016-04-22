@@ -50,7 +50,7 @@ public class PlayerJoin implements Listener{
                 
                 playerData.createSection("selling");
                 playerData.set("selling.price", 0);
-                playerData.set("selling.item", "");
+                playerData.set("selling.item", " ");
                 playerData.set("selling.amount", 0);
                
                 playerData.save(f);
