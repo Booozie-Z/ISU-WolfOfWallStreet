@@ -17,14 +17,18 @@ import org.bukkit.inventory.ItemStack;
 public class Sell implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		File f = new File("/plugins/WolfOfWallStreet/" + File.separator + sender.getName() + ".yml");
 		if (cmd.getName().equalsIgnoreCase("sell")) {
 			if (args.length != 3) {
 				sender.sendMessage(ChatColor.BOLD + "Usage: /sell :item: :amount: :price:");
 				return true;
 			}
+			takeItem(sender, args);
+			FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
 			try {
-				takeItem(sender, args);
+				playerData.save(f);
 			} catch (IOException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			return true;
@@ -32,7 +36,7 @@ public class Sell implements CommandExecutor {
 		return false;
 	}
 
-	private void takeItem(CommandSender sender, String[] args) throws IOException {
+	private void takeItem(CommandSender sender, String[] args){
 		File f = new File("/plugins/WolfOfWallStreet/" + File.separator + sender.getName() + ".yml");
 		FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
 		int itemAmount = Integer.parseInt(args[1]);
@@ -60,7 +64,11 @@ public class Sell implements CommandExecutor {
 					playerData.set("selling.amount", itemAmount + temp);
 					playerData.set("selling.price", itemPrice);
 				}
-				playerData.save(f);
+				try {
+					playerData.save(f);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			} else {
 				sender.sendMessage(ChatColor.RED + "You dont have " + itemAmount + " " + args[0] + ".");
 			}
