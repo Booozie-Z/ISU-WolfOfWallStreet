@@ -1,6 +1,7 @@
 package TestPlugin.commands;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.bukkit.Bukkit;
 //import java.util.Scanner;
@@ -23,17 +24,22 @@ public class Sell implements CommandExecutor {
 				sender.sendMessage(ChatColor.BOLD + "Usage: /sell :item: :amount: :price:");
 				return true;
 			}
-			takeItem(sender, args);
+			try {
+				takeItem(sender, args);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 			return true;
 		}
 		return false;
 	}
 
-	private void takeItem(CommandSender sender, String[] args) {
+	private void takeItem(CommandSender sender, String[] args) throws IOException {
 		File f = new File("/plugins/WolfOfWallStreet/" + File.separator + sender.getName() + ".yml");
 		FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
 
 		int itemAmount = Integer.parseInt(args[1]);
+		int itemPrice = Integer.parseInt(args[2]);
 		Player player = (Player) sender;
 		Material matSelling = Material.matchMaterial(args[0]);
 		ItemStack selling = new ItemStack(matSelling);
@@ -52,6 +58,16 @@ public class Sell implements CommandExecutor {
 					itemsSold++;
 					player.updateInventory();
 				}
+				if(playerData.getString("selling.item") == "" || playerData.getInt("selling.amount") == 0){
+					playerData.set("selling.item" , matSelling.toString());
+					playerData.set("selling.amount", itemAmount);
+					playerData.set("selling.price", itemPrice);
+				} else if (playerData.getString("selling.item") == matSelling.toString()) {
+					int temp = playerData.getInt("selling.amount");
+					playerData.set("selling.amount", itemAmount + temp);
+					playerData.set("selling.price", itemPrice);
+				}
+				playerData.save(f);
 			} else {
 				sender.sendMessage(ChatColor.RED + "You dont have " + itemAmount + " " + args[0] + ".");
 			}

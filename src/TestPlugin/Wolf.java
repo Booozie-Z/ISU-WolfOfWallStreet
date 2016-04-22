@@ -71,8 +71,6 @@ public class Wolf extends JavaPlugin {
 	    if (!playersfile.exists()) {
 	        try {
 	            playersfile.createNewFile();
-	            
-	            
 	        }
 	        catch (IOException e) {
 	            getLogger().severe(ChatColor.RED + "Could not create the playerBalance.yml!");

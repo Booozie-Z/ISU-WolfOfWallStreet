@@ -49,26 +49,19 @@ public class PlayerJoin implements Listener{
                 playerData.set("currency.balance", 100);
                 
                 playerData.createSection("selling");
+                playerData.set("selling.price", 0);
+                playerData.set("selling.item", "");
+                playerData.set("selling.amount", 0);
                
                 playerData.save(f);
             } catch (IOException exception) {
-
                 exception.printStackTrace();
             }
         }
 		
 		//To add PlayerValue getPlayerListName() = new PlayerValue()
 		//then create the actual player value class and all the methods
-        
-        
-      
-        
-        
-        
-        
-        
-        
-        
+
         
 	}
 	/*@EventHandler
