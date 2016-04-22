@@ -18,3 +18,5 @@ commands:
         usage: /buy item amount
     Pay:
         description: Pay a player money
+    Bal:
+        description: yeh it buys shit muthafuka

@@ -41,6 +41,7 @@ public class Wolf extends JavaPlugin {
 	public void loadCommands(){
 		getCommand("PjSucks").setExecutor(new pjsucks());
 		getCommand("Balance").setExecutor(new ValueCommands());
+		getCommand("Bal").setExecutor(new ValueCommands());
 		getCommand("Give").setExecutor(new ValueCommands());
 		getCommand("SetBalance").setExecutor(new ValueCommands());
 		getCommand("Pay").setExecutor(new ValueCommands());

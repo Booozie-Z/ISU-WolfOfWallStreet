@@ -26,7 +26,7 @@ public class ValueCommands implements CommandExecutor{
  	
  		
  
- 		if (cmd.getName().equalsIgnoreCase("Balance") && args.length == 0) { // If the player typed /basic then do the following...
+ 		if (cmd.getName().equalsIgnoreCase("Balance") || cmd.getName().equalsIgnoreCase("Bal") && args.length == 0) { // If the player typed /basic then do the following...
   			String playerName = player.getName();
   			File f = new File("./plugins/WolfOfWallStreet/" + File.separator + playerName + ".yml");
   			FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
@@ -37,7 +37,7 @@ public class ValueCommands implements CommandExecutor{
  			
  			sender.sendMessage(ChatColor.GREEN + "Your balance is $" + value);
  			return true;
- 		}else if(cmd.getName().equalsIgnoreCase("Balance") && args.length == 1){
+ 		}else if(cmd.getName().equalsIgnoreCase("Balance")  || cmd.getName().equalsIgnoreCase("Bal") && args.length == 1){
  			if(player.isOp() == false && !(args[0].equals(player.getName()))){
  				sender.sendMessage(ChatColor.RED + "Sorry, you do not have permission to use this command!");
  				return false;
