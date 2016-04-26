@@ -1,6 +1,7 @@
 package TestPlugin.events.player;
 
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -17,7 +18,6 @@ import java.io.IOException;
 
 
 public class PlayerJoin implements Listener{
-	@SuppressWarnings("unused")
 	private Wolf plugin;
 	
 	public void playerJoin(Wolf pl){
@@ -40,7 +40,7 @@ public class PlayerJoin implements Listener{
         if (!f.exists()) {
             try {
             	f.createNewFile();
-            	
+            	playerData.load(f);
                 playerData.createSection("currency");
                 playerData.set("currency.balance", 100);
                 
@@ -56,7 +56,10 @@ public class PlayerJoin implements Listener{
                 playerData.save(f);
             } catch (IOException exception) {
                 exception.printStackTrace();
-            }
+            } catch (InvalidConfigurationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         }
 		
 		//To add PlayerValue getPlayerListName() = new PlayerValue()

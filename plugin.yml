@@ -6,10 +6,16 @@ commands:
         description: What do you think?
     Balance:
         description: Your current balance.
+        usage: /balance
     Give:
-        description: Give player money.
+        description: Give player money (Must be OP).
+        usage: /give amount
     SetBalance:
+        description: Set player balance (Must be OP).
+        usage: /Setbalance amount
+    SetBal:
         description: Set player balance.
+        usage: /Setbalance amount
     sell:
         description: Sell an item to the server.
         usage: /sell item amount price
@@ -17,6 +23,8 @@ commands:
         description: Buy an item from the server.
         usage: /buy item amount
     Pay:
-        description: Pay a player money
+        description: Pay a player money. Takes money from command user and adds to recipeint. (Player must be online).
+        usage: /pay person amount
     Bal:
-        description: yeh it buys shit muthafuka
+        description: Your current balance.
+        usage: /bal

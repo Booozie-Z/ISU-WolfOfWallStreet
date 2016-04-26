@@ -36,7 +36,6 @@ public class Wolf extends JavaPlugin {
 	}
 	/**
 	 * Loads all the commands that we add to the plugin.
-	 * So far it loads Pjsucks and Balance.
 	 */
 	public void loadCommands(){
 		getCommand("PjSucks").setExecutor(new pjsucks());
@@ -44,9 +43,10 @@ public class Wolf extends JavaPlugin {
 		getCommand("Bal").setExecutor(new ValueCommands());
 		getCommand("Give").setExecutor(new ValueCommands());
 		getCommand("SetBalance").setExecutor(new ValueCommands());
+		getCommand("SetBal").setExecutor(new ValueCommands());
 		getCommand("Pay").setExecutor(new ValueCommands());
-		getCommand("sell").setExecutor(new Sell());
-		getCommand("buy").setExecutor(new Buy());
+		getCommand("Sell").setExecutor(new Sell());
+		getCommand("Buy").setExecutor(new Buy());
 	}
 	/**
 	 * Registers events to listen for in game.

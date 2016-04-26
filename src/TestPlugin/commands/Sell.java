@@ -1,6 +1,7 @@
 package TestPlugin.commands;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.bukkit.Bukkit;
@@ -9,6 +10,7 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -45,6 +47,18 @@ public class Sell implements CommandExecutor {
 	private void takeItem(CommandSender sender, String[] args){
 		File f = new File("/plugins/WolfOfWallStreet/" + File.separator + sender.getName().toString() + ".yml");
 		FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
+		try {
+			playerData.load(f);
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (InvalidConfigurationException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		int itemAmount = Integer.parseInt(args[1]);
 		int itemPrice = Integer.parseInt(args[2]);
 		Player player = (Player) sender;
@@ -54,14 +68,15 @@ public class Sell implements CommandExecutor {
 		if (player.getInventory().contains(matSelling) && itemAmount <= getAmountOfItems(player, args)) {
 			if (player.getInventory().contains(matSelling, getAmountOfItems(player, args))) {
 				sender.sendMessage("Amount in inventory: " + getAmountOfItems(player, args));
-				sender.sendMessage("Amount trying to sell: " + itemAmount);
+				//sender.sendMessage("Amount trying to sell: " + itemAmount);
 				Bukkit.getServer().broadcastMessage(ChatColor.BLUE + player.getDisplayName() + " is selling " + args[1]
 						+ " " + args[0] + " for $" + args[2]);
 				//playerData.set("currency.balance", 222);  //test 
 				player.getInventory().removeItem(selling);
-				sender.sendMessage("Amount in inventory: " + getAmountOfItems(player, args));			
-				playerData.set("price.p", 69);
-				sender.sendMessage("Amount in inventory: " + getAmountOfItems(player, args));	
+				//sender.sendMessage("Amount in inventory: " + getAmountOfItems(player, args));			
+				//playerData.set("currency.balance.price", 69);
+				//playerData.createSection("test");
+				//sender.sendMessage("Amount in inventory: " + getAmountOfItems(player, args));	
 				if(playerData.getString("selling.item") == " " || playerData.getInt("amount.a") == 0){
 					//playerData.set("currency.balance", 11111);
 					playerData.set("item.i", matSelling.toString());

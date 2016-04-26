@@ -139,8 +139,7 @@ public class ValueCommands implements CommandExecutor{
   			FileConfiguration playerData = YamlConfiguration.loadConfiguration(f);
   			
   			int set = Integer.parseInt(args[0]);
-  			int value = set;
-  			playerData.set("currency.balance", value);		sender.sendMessage(ChatColor.RED + player.getName() + ChatColor.GREEN + ": 0 (Balance unfinished.)");
+  			//playerData.set("currency.balance", value);		sender.sendMessage(ChatColor.RED + player.getName() + ChatColor.GREEN + ": 0 (Balance unfinished.)");
  			sender.sendMessage(ChatColor.GREEN + "Your balance was successfully set to $" + set);
  			try {
  				playerData.save(f);
@@ -149,7 +148,7 @@ public class ValueCommands implements CommandExecutor{
  				e.printStackTrace();
  			}
  			return true;
- 		}else if(cmd.getName().equalsIgnoreCase("SetBalance") && args.length == 2 && new File("./plugins/WolfOfWallStreet/" + File.separator + args[0] + ".yml").exists()){
+ 		}else if((cmd.getName().equalsIgnoreCase("SetBalance") || cmd.getName().equalsIgnoreCase("SetBal")) && args.length == 2 && new File("./plugins/WolfOfWallStreet/" + File.separator + args[0] + ".yml").exists()){
   			
  			if(player.isOp() == false){
  				sender.sendMessage(ChatColor.RED + "Sorry, you do not have permission to use this command!");
@@ -162,7 +161,7 @@ public class ValueCommands implements CommandExecutor{
  			int set = Integer.parseInt(args[1]);
  			int value = set;
  			playerData.set("currency.balance", value);
- 			sender.sendMessage(ChatColor.GREEN + args[0] + "'s balance successfully set to $" + set);
+ 			sender.sendMessage(ChatColor.GREEN + player.getName() + "'s balance successfully set to $" + set);
  			reciever.sendMessage(ChatColor.GREEN + player.getName() + " has set your balance to $" + set);
   			try {
   				playerData.save(f);
