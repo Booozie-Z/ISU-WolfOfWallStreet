@@ -45,9 +45,13 @@ public class PlayerJoin implements Listener{
                 playerData.set("currency.balance", 100);
                 
                 playerData.createSection("selling");
-                playerData.set("selling.price", 0);
                 playerData.set("selling.item", " ");
-                playerData.set("selling.amount", 0);
+                
+                playerData.createSection("price");
+                playerData.set("price.p", 0);
+                
+                playerData.createSection("amount");
+                playerData.set("amount.a", 0);
                
                 playerData.save(f);
             } catch (IOException exception) {

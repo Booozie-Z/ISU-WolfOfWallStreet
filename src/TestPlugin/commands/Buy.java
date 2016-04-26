@@ -2,8 +2,6 @@ package TestPlugin.commands;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Scanner;
-
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -14,7 +12,6 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import java.lang.Object;
 
 public class Buy implements CommandExecutor {
 	@Override
@@ -24,7 +21,7 @@ public class Buy implements CommandExecutor {
 			File play = new File("./plugins/WolfOfWallStreet/" + File.separator + player.getName().toString() + ".yml");
   			FileConfiguration mplayerData = YamlConfiguration.loadConfiguration(play);
 			if (args.length != 2) {
-				sender.sendMessage(ChatColor.BOLD + "Usage: /buy item amount price");
+				sender.sendMessage(ChatColor.BOLD + "Usage: /buy item amount");
 				return true;
 			}
 			
@@ -65,7 +62,7 @@ public class Buy implements CommandExecutor {
 					Bukkit.getServer().broadcastMessage(player.getName().toString() + " just bought " + amount + " " + s + ". There are " + playerData.getInt("selling.amount") + " " + s + " left!");
 					return true;
 				}
-				mplayerData.set("currency.balance", 222);
+				//mplayerData.set("currency.balance", 222);                                  //test
 				player.sendMessage("This item is not being sold at the moment");
 				
 				try {
